@@ -20,7 +20,7 @@
                 </div>
             {% endif %}
         {% endwith %}
-            <form class="rounded-3 p-4" action="/contact" method="POST" style="background-color: #191919;">
+            <form class="rounded-3 p-4" action="{{ url_for('contact') }}" method="POST" style="background-color: #191919;">
                 {{ form.hidden_tag() }}
                 <div class="form-floating mb-3">
                     {{ form.name(class="form-control", placeholder="Name", style="background-color: #0e0e0e; color: #e6e6e6") }}

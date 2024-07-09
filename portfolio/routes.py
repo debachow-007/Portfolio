@@ -11,7 +11,12 @@ import os
 def home():
     home_text = data['home_text']
     roles = data['home_roles']
-    return render_template('home.html', title='Home', roles=roles, home_text=home_text)
+    return render_template('home.html', roles=roles, home_text=home_text)
+
+@app.route('/resume')
+def resume():
+    pdf_path = os.path.join(app.root_path, 'static/pdf/debargha_cv.pdf')
+    return send_file(pdf_path, as_attachment=True)
 
 @app.route('/about')
 def about():
@@ -58,8 +63,4 @@ def contact():
             return redirect(url_for('contact'))
         
     return render_template('contact.html', title='Contact', form=form)
-    
-@app.route('/resume')
-def resume():
-    pdf_path = os.path.join(app.root_path, 'static\pdf\debargha_cv.pdf')
-    return send_file(pdf_path, as_attachment=True)
+
