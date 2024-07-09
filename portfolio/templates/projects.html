@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style>
+    .project-card {
+        transition: all 0.3s ease-in-out;
+    }
+    .project-card:hover {
+        transform: scale(1.05);
+    }
+    .expanded-card {
+        position: fixed; /* Change position to fixed */
+        top: 50%; /* Align to the vertical center */
+        left: 50%; /* Align to the horizontal center */
+        transform: translate(-50%, -50%); /* Center the card */
+        width: 75vw;
+        background: white;
+        margin: 0 auto; /* Remove top and left margin */
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        display: none;
+        z-index: 1050;
+        overflow-y: auto;
+        max-height: 80vh;
+    }
+    .expanded-card-content {
+        background: black;
+        padding: 20px;
+    }
+    .expanded-card-close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 24px;
+        color: #999;
+        cursor: pointer;
+    }
+    .image {
+        max-width: 40%;
+        height: auto;
+    }
+    
+</style>
+
+<div class="container">
+    <h1 class="jumbotron jumbotron-fluid" style="font-size: 60px;"><strong>My Awesome <br><span style="color: #FFDE59">Projects</span></strong></h1>
+    <div class="container mt-5">
+        <div class="row" data-masonry='{"percentPosition": true }'>
+            {% for project in projects %}
+            <div class="col-md-4 mb-4">
+                <div class="card project-card bg-dark text-white" data-id="{{ loop.index0 }}">
+                    <div class="card-header text-center" style="color: #FFDE59">
+                        <h5><strong>{{ project.name }}</strong></h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{ project.short_description }}</p>
+                    </div>
+                </div>
+                <div class="expanded-card" id="expanded-card-{{ loop.index0 }}">
+                    <div class="expanded-card-close" onclick="toggleCard('expanded-card-{{ loop.index0 }}')">&times;</div>
+                    <div class="expanded-card-content">
+                        <h2>{{ project.name }}
+                            {% if project.github %}
+                            <a href="{{ project.github }}" class="btn btn-primary">Github</a>
+                            {% endif %}
+                            {% if project.link %}
+                            <a href="{{ project.link }}" class="btn btn-secondary ml-2">Take A Peek</a>
+                            {% endif %}
+                        </h2>
+                        <p>{{ project.description }}</p>
+                        <ul>
+                            {% for bullet in project.bullets %}
+                            <li>{{ bullet }}</li>
+                            {% endfor %}
+                        </ul>
+                        <h6>Tech Stack:</h6>
+                        <p>{{ project.tech | join(', ') }}</p>
+                        <div class="container">
+                            <div class="row gallery">
+                                {% for image in project.images %}
+                                <div class="col-md-4 mb-4">
+                                    <img src={{ url_for('static', filename='pics/' + image) }} class="image img-fluid" alt="{{ project.name }}">
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+    function toggleCard(cardId) {
+        var card = document.getElementById(cardId);
+        if (card.style.display === 'block') {
+            card.style.display = 'none';
+        } else {
+            card.style.display = 'block';
+            //window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.project-card').forEach(function(card) {
+            card.addEventListener('click', function() {
+                toggleCard('expanded-card-' + this.dataset.id);
+            });
+        });
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+{% endblock %}

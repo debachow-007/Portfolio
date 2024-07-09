@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="jumbotron jumbotron-fluid" style="font-size: 60px;"><strong>About Me</strong></h1>
+    <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-4">
+            <div class="card vertical-card" style="background-color: #0e0e0e; color: white">
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><strong style="color:#FFDE59">Debargha Chowdhury</strong></li>
+                        <li><strong>Age:</strong> {{ age }}</li>
+                        <li><strong>Hometown:</strong> Lucknow, India</li>
+                        <br>
+                        <ul>
+                            {% for item_key, item_value in about_data.items() %}
+                                <li><strong>{{ item_key }}</strong></li>
+                                <ul>
+                                    {% for data in item_value %}
+                                    <li style="color:#FFDE59">{{ data }}</li>
+                                    {% endfor %}
+                                </ul>
+                                <br>
+                            {% endfor %}
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Right Column -->
+        <div class="col-md-8">
+            <figure class="figure w-10 float-end mx-3 my-2">
+                <img src="{{ url_for('static', filename='pics/profile.jpg') }}" alt="Profile Picture" style="width: 200px;">
+            </figure>
+            
+                {% for text in about_text %}
+                <p style="text-align: justify">{{ text }}</p>
+                {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

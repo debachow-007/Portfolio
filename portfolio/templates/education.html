@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="jumbotron jumbotron-fluid" style="font-size: 60px;"><strong>My <span style="color: #FFDE59">Education</span></strong></h1>
+    <div class="row justify-content-center">
+        {% for edu in educations %}
+        <div class="col-md-8 m-3">
+            <div class="card" style="background-color: #0e0e0e; color: white">
+                <div class="card-body">
+                    <h5 class="card-title text-center" style="color: #FFDE59">{{ edu.degree }}</h5>
+                    <h6 class="card-subtitle mb-2 text-center">{{ edu.subject }}</h6>
+                    <div class="card-text text-center">{{ edu.institute }}</div>
+                    <p class="card-text fst-italic text-center" style="color: #808080">(Affiliated with {{ edu.university }})</p>
+                    <p class="card-text"><strong>{{ edu.duration }}</strong></p>
+                    <div class="card-text" style="color: #FFDE59">{{ edu.score1 }}</div>
+                    <p class="card-text" style="color: #FFDE59">{{ edu.score2 }}</p>
+                    <ul>
+                        {% for bullet in edu.bullets %}
+                        <li>{{ bullet }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@500;700;900&display=swap');
+
+:root {
+    --primary-bg-color: #1E1E1E;
+    --primary-text-color: #FFFFFF;
+    --accent-color: #FFDE59;
+    --secondary-bg-color: #0e0e0e79;
+    --secondary-text-color: #000000;
+    --border-color: #FFDE59;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html body {
+    background: #1E1E1E;
+    color: #FFFFFF;
+}
+
+.fixed-header {
+    background-color: #303030;
+}
+
+.nav-pills a {
+    text-decoration: none;
+    padding: 5px 10px !important;
+    font-size: 20px;
+    font-weight: 500 !important;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.nav-pills a:hover {
+    color: #FFDE59 !important;
+}
+
+.nav-pills .nav-item:hover a {
+    color: #FFDE59 !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #FFDE59 !important;
+    color: #1E1E1E !important;
+}
+
+.nav-pills .nav-link.active:hover, .nav-pills .show>.nav-link:hover {
+    color: #FFFFFF !important;
+}
+
+.btn.btn-primary {
+    border:#FFDE59;
+    background-color: #FFDE59;
+    color: #1E1E1E;
+    transition: all 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+    background-color: #1E1E1E;
+    color: #FFDE59;
+}

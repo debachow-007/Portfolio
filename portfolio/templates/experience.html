@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container m-5">
+    <h1 class="jumbotron jumbotron-fluid" style="font-size: 60px;"><strong>Work <span style="color: #FFDE59">Experience</span></strong></h1>
+    <div class="row">
+        {% for exp in experiences %}
+        <div class="col-md-6 m-3">
+            <div class="card" style="background-color: #0e0e0e; color: white">
+                <div class="card-body">
+                    <h5 class="card-title">{{ exp.role }}</h5>
+                    <h6 class="card-subtitle mb-2" style="color: #808080">{{ exp.company }}</h6>
+                    <p class="card-text"><strong>{{ exp.duration }}</strong></p>
+                    {% for text in exp.description %}
+                    <p class="card-text">{{ text }}</p>
+                    {% endfor %}
+                    <ul>
+                        {% for bullet in exp.bullets %}
+                        <li>{{ bullet }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

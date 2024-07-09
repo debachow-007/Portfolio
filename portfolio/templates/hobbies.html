@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="jumbotron jumbotron-fluid" style="font-size: 60px;"><strong>Passions and <br><span style="color: #FFDE59">Pastimes</span></strong></h1>
+    <div class="row">
+        {% for item in hobbies %}
+        <div class="col-md-8 m-3">
+            <div class="card" style="background-color: #0e0e0e; color: white">
+                <div class="card-body">
+                    <h4 class="card-title mb-3" style="color: #FFDE59"><strong><i class="{{ item.icon }}"></i> {{ item.name }}</strong></h4>
+                    {% if item.images %}
+                    <div class="row">
+                        <div class="col-md-8">
+                            {% if item.description is string %}
+                            <p style="text-align: justify">{{ item.description }}</p>
+                            {% elif item.description is iterable %}
+                            {% for text in item.description %}
+                            <p style="text-align: justify">{{ text }}</p>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                        <div class="col-md-4">
+                        {% if item.images %}
+                            {% for image in item.images %}
+                                <figure class="figure">
+                                    <img src="{{ url_for('static', filename='pics/' + image) }}" style="width: 200px;">
+                                </figure>
+                            {% endfor %}
+                        {% endif %}
+                        </div>
+                    </div>
+                    {% else %}
+                        {% if item.description is string %}
+                                <p style="text-align: justify">{{ item.description }}</p>
+                                {% elif item.description is iterable %}
+                                {% for text in item.description %}
+                                <p style="text-align: justify">{{ text }}</p>
+                                {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
