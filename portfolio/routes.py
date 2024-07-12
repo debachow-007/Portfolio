@@ -1,9 +1,7 @@
 from flask import render_template, send_file, url_for, flash, redirect, request
-from portfolio import app, data, mail
-from flask_mail import Message  # type: ignore
+from portfolio import app, data
 from portfolio.forms import ContactForm
 from portfolio.utils import calculate_age, send_email
-import datetime
 import os
 
 @app.route('/')
