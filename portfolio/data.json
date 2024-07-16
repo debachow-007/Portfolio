@@ -44,14 +44,16 @@
             "Flask",
             "Bootstrap"
         ],
-        "Platforms": [
+        "Platforms and Tools": [
             "MS Office",
+            "Power BI",
             "Visual Studio Code",
             "Android Studio",
             "Microsoft Visual Studio",
             "GitHub",
             "Amazon Web Services",
-            "Cisco Packet Tracer"
+            "Cisco Packet Tracer",
+            "Amazon AWS"
         ],
         "Languages known": [
             "English",
@@ -62,7 +64,7 @@
     },
 
     "about_text": [
-        "Welcome to my portfolio website! I'm thrilled to have you here and share my journey as a final year Computer Science Engineering student. With a passion for technology and innovation, I've dedicated myself to honing my coding and problem-solving skills, and I'm excited to showcase my work and projects.",
+        "Welcome to my portfolio website! I'm thrilled to have you here and share my journey as a Computer Science Engineering fresher. With a passion for technology and innovation, I've dedicated myself to honing my coding and problem-solving skills, and I'm excited to showcase my work and projects.",
 
         "My journey has not only been about technical prowess but also about personal growth. I bring to the table a strong sense of determination, adaptability, and a keen eye for detail. These qualities have allowed me to navigate complex projects, overcome challenges, and consistently deliver exceptional results. Furthermore, my collaboration skills enable me to work seamlessly in teams and ensure the effective conveyance of ideas and solutions.",
 
@@ -159,7 +161,7 @@
                 "Commenting system: write and delete comments on blog posts.",
                 "JWT-based password reset mechanism for secure account recovery."
             ],
-            "github":"#",
+            "github":"https://github.com/debachow-007/BlogZilla",
             "link": "#",
             "images": [
                 "project71.jpg",
@@ -196,7 +198,7 @@
                 "Chatbot powered by GPT-3.5, informed by party manifestos from different political parties.",
                 "Interactive Q&A feature to ask questions about promises made by various parties and receive relevant answers."
             ],
-            "github":"#",
+            "github":"https://github.com/debachow-007/Tweetocracy",
             "images": [
                 "project61.jpg",
                 "project62.jpg",
@@ -226,7 +228,7 @@
                 "Awarded the best project in college",
                 "Published a research paper detailing the implementation and results. DTC Journal of Computational Intelligence, Vol-2, Issue-2, December 2023"
             ],
-            "github":"#",
+            "github":"https://github.com/debachow-007/CypherCraft",
             "images": [
                 "project51.jpg",
                 "project52.jpg"
@@ -251,7 +253,7 @@
                 "Achieved an accuracy of 86%",
                 "Challenges: Handling a large and imbalanced dataset."
             ],
-            "github": "#",
+            "github": "https://github.com/debachow-007/MovieGenreClassification",
             "images": [
                 "project41.jpg",
                 "project42.jpg"
@@ -276,7 +278,7 @@
                 "Achieved an accuracy of 99.57%",
                 "Challenges: Dealing with imbalanced data."
             ],
-            "github": "#",
+            "github": "https://github.com/debachow-007/CreditCardFraud",
             "images": [
                 "project31.jpg",
                 "project32.jpg"
@@ -300,7 +302,7 @@
                 "Dataset used: Banking data",
                 "Achieved an accuracy of 86.75%"
             ],
-            "github": "#",
+            "github": "https://github.com/debachow-007/CustomerChurnPrediction",
             "images": [
                 "project21.jpg",
                 "project22.jpg"
@@ -323,7 +325,7 @@
                 "Packet sniffers placed to capture and analyze packets from various nodes.",
                 "Analysis of Ethernet and IP header changes in captured packets."
             ],
-            "github": "#",
+            "github": "https://github.com/debachow-007/cisco_cybersecurity",
             "images": [
                 "project11.jpg"
             ]

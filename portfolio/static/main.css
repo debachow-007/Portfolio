@@ -63,7 +63,7 @@ html body {
 }
 
 .btn.btn-primary:active {
-    background-color: #FFDE59;
-    color: #1E1E1E;
-    border: #FFDE59;
+    background-color: #FFDE59 !important;
+    color: #1E1E1E !important;
+    border: #FFDE59 !important;
 }
