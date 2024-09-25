@@ -6,7 +6,7 @@ from flask_mail import Message  # type: ignore
 def calculate_age():
     now = datetime.datetime.now()
     birthday = datetime.datetime(year=2001, month=9, day=26)
-    age = now.year - birthday.year - ((now.month, now.date)<(birthday.month, birthday.day))
+    age = now.year - birthday.year - ((now.month, now.day)<(birthday.month, birthday.day))
     return age
 
 def send_email(visitor):
