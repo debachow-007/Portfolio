@@ -42,7 +42,6 @@
             "Numpy",
             "Pandas",
             "Scikit-learn",
-            "Django",
             "Flask",
             "Bootstrap"
         ],
@@ -62,9 +61,7 @@
             "Hindi",
             "Bengali",
             "Assamese",
-            "French",
-            "Japanese",
-            "Arabic"
+            "French"
         ]
     },
 
@@ -139,7 +136,7 @@
             "bullets":[
                 "Consistently excelled in various competitions, receiving numerous accolades that demonstrate my commitment to excellence and ability to thrive in high-pressure environments.",
                 "Served as Head of the Editorial Board at my school during the academic year 2018-2019.",
-                "Achieved a notable milestone by ranking 12th at the National Level of the Wiz National Spelling Bee in 2015."
+                "Achieved a notable milestone by ranking 4th at the National Level of the Wiz National Spelling Bee in 2015."
             ]
         }
     ],
@@ -167,7 +164,6 @@
                 "JWT-based password reset mechanism for secure account recovery."
             ],
             "github":"https://github.com/debachow-007/BlogZilla",
-            "link": "#",
             "images": [
                 "project71.jpg",
                 "project72.jpg",
@@ -353,8 +349,8 @@
         {
             "name": "Reading",
             "description": [
-                "Reading is more than a hobby. It's a journey guided by instinct and curiosity. I'm drawn to the profound insights of non-fiction, exploring history and science, as well as the enchanting tales of mythology that reveal timeless truths. Alongside these, I find solace and wisdom in psychology books like \"Thinking, Fast and Slow,\" unraveling the complexities of human behavior.",
-                "The Bhagavad Gita has profoundly influenced my worldview, offering timeless lessons on duty, ethics, and spiritual growth. Additionally, texts like \"The Art of War\" teach invaluable lessons in strategy, resilience, and adaptation. These are the lessons that resonate deeply and guide me in navigating life's challenges with purpose and clarity."
+                "Reading is more than a hobby. It's a journey guided by instinct and curiosity. I'm drawn to the profound insights of non-fiction, exploring history and science, as well as the enchanting tales of mythology that reveal timeless truths. Alongside these, I find solace and wisdom in psychology books like \"Thinking, Fast and Slow,\" by Jon Kanheman, unraveling the complexities of human behavior.",
+                "The Bhagavad Gita has profoundly influenced my worldview, offering timeless lessons on duty, ethics, and spiritual growth. Additionally, texts like Sun Tzu's \"The Art of War\" teach invaluable lessons in strategy, resilience, and adaptation. These are the lessons that resonate deeply and guide me in navigating life's challenges with purpose and clarity."
             ],
             "icon": "fa-solid fa-book-open"
         },

@@ -56,7 +56,7 @@ def contact():
             flash('Message sent successfully!', 'success')
             return redirect(url_for('contact'))
         
-        except:
+        except Exception as e:
             flash('Message could not be sent.', 'danger')
             return redirect(url_for('contact'))
         
