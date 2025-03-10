@@ -120,7 +120,7 @@
             "bullets":[
                 "Achieved first place in the Project Open Day for my project 'Cyphercraft.'",
                 "Published multiple research papers in reputed journals in fields such as Cybersecurity and Machine Learning over a four-year period.",
-                "Successfully qualified for the GATE exam in both attempts.",
+                "Successfully qualified for the GATE exam in first attempt.",
                 "Attained a 95.27 percentile in the CAT exam in 2023."
             ]
         },
@@ -134,6 +134,7 @@
             "score1": "ISC (2019): 86.5%",
             "score2": "ICSE (2017): 89.2%",
             "bullets":[
+                "Scored 91.75 percentile in JEE Mains (2019) and qualified for JEE Advanced",
                 "Consistently excelled in various competitions, receiving numerous accolades that demonstrate my commitment to excellence and ability to thrive in high-pressure environments.",
                 "Served as Head of the Editorial Board at my school during the academic year 2018-2019.",
                 "Achieved a notable milestone by ranking 4th at the National Level of the Wiz National Spelling Bee in 2015."
@@ -142,7 +143,71 @@
     ],
 
     "projects": [
-
+        {
+            "name": "Inventory Management System (Ongoing)",
+            "tech": [
+                "Python",
+                "Flask",
+                "SQLite",
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "SCSS",
+                "Typeahead.js"
+            ],
+            "short_description": "A streamlined inventory management system built with Flask, MySQL/SQLite, and Bootstrap to help restaurants efficiently track purchases, stock levels, and transfers.",
+            "description": "This application simplifies inventory tracking by managing goods, batches, suppliers, and departmental transfers. It includes low-stock alerts, expiry notifications, and financial tracking to enhance restaurant purchase management.",
+            "bullets": [
+                "Manage stock by batch, supplier, and expiry date.",
+                "Record stock movement between departments.",
+                "Get notifications for low stock and expiring items.",
+                "Monitor supplier payments and outstanding dues.",
+                "Track all user actions for accountability.",
+                "Charts for stock levels, trends, and expenses."
+            ]
+        },
+        {
+            "name": "News Application",
+            "tech": [
+                "Python",
+                "Flask",
+                "SQLite",
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "SCSS",
+                "NewsAPI"
+            ],
+            "short_description": "A dynamic news app built with Flask, NewsAPI, Bootstrap, and SCSS, providing the latest headlines with a seamless user experience.",
+            "description": "The News Application fetches real-time news updates and allows users to search for specific topics. With a clean and responsive design, it delivers an efficient way to stay informed.",
+            "bullets": [
+                "Fetches real-time headlines using NewsAPI",
+                "Find news on specific topics instantly",
+                "Sleek, modern design with Bootstrap & SCSS",
+                "Seamless user experience with responsive layout",
+                "Ensures smooth API integration and data handling"
+            ],
+            "github": "https://github.com/debachow-007/NewsApp"
+        },
+        {
+            "name": "TaskManager",
+            "tech": [
+                "Python",
+                "Flask",
+                "SQLite",
+                "HTML",
+                "CSS",
+                "SCSS"
+            ],
+            "short_description": "A simple to-do list web application built using Flask and SQLite.",
+            "description": "The To-Do Planner allows users to create, update, and manage their daily tasks efficiently. With a clean and responsive interface, the application ensures a smooth user experience. Tasks can be categorized, prioritized, and marked as completed, helping users stay productive and organized.",
+            "bullets": [
+                "Add, edit, delete, and mark tasks as completed",
+                "Uses SQLite to store and manage tasks efficiently",
+                "Styled with SCSS for a sleek and responsive design"
+            ],
+            "github": "https://github.com/debachow-007/TaskManagerApplication"
+        },
         {
             "name": "Blogzilla",
             "tech": [
