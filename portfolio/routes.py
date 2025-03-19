@@ -48,7 +48,6 @@ def contact():
     form = ContactForm()
     
     if form.validate_on_submit():
-        print("Form validated")
         visitor = {'name': form.name.data, 'email': form.email.data, 'message': form.message.data}
         
         try:

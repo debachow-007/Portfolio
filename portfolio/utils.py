@@ -10,19 +10,24 @@ def calculate_age():
     return age
 
 def send_email(visitor):
-    msg = Message(subject=f"New Contact Form Submission", 
-                      sender = os.getenv('MAIL_SENDER'),
-                      recipients=["debachow007@hotmail.com"])
-    msg.body = f'''Hello,
-    
-You have a new contact form submission. 
-Here are the details: 
+    try:
+        msg = Message(subject=f"New Contact Form Submission", 
+                        sender = os.getenv('MAIL_SENDER'),
+                        recipients=["debachow007@hotmail.com"])
+        msg.body = f'''Hello,
+        
+    You have a new contact form submission. 
+    Here are the details: 
 
-    Name: {visitor['name']}
-    Email: {visitor['email']}
-    Message: {visitor['message']}
-    
-Have a good day.'''
-    
-    mail.send(msg)
+        Name: {visitor['name']}
+        Email: {visitor['email']}
+        Message: {visitor['message']}
+        
+    Have a good day.'''
+        
+        mail.send(msg)
+        print("Email sent successfully")
+        
+    except Exception as e:
+        print(e)
 
