@@ -79,6 +79,18 @@
 
     "experiences": [
         {
+            "role": "Backend Developement Intern",
+            "company": "Vibes Commmunications",
+            "duration": "March 2025 - present",
+            "description": [
+                "Handling different project related to mainly but not limited to PHP and MySQL"
+            ],
+            "bullets": [
+                "Using core PHP and frameworks like CodeIgniter 4",
+                "Working with different clients and their requirements"
+            ]
+        },
+        {
             "role": "Machine Learning Intern",
             "company": "CodSoft",
             "duration": "August 2023 - September 2023",
