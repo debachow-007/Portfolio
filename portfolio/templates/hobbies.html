@@ -24,7 +24,7 @@
                         {% if item.images %}
                             {% for image in item.images %}
                                 <figure class="figure">
-                                    <img src="{{ url_for('static', filename='pics/' + image) }}" style="width: 200px;">
+                                    <img src="{{ url_for('static', filename='pics/' + image) }}" style="width: 100%; object-fit: cover;">
                                 </figure>
                             {% endfor %}
                         {% endif %}
