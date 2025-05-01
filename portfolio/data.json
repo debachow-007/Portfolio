@@ -80,14 +80,15 @@
     "experiences": [
         {
             "role": "Backend Developement Intern",
-            "company": "Vibes Commmunications",
+            "company": "Vibes Communications",
             "duration": "March 2025 - present",
             "description": [
                 "Handling different project related to mainly but not limited to PHP and MySQL"
             ],
             "bullets": [
                 "Using core PHP and frameworks like CodeIgniter 4",
-                "Working with different clients and their requirements"
+                "Working with different clients and their requirements",
+                "Entrusted with the responsibility to introduce artificial intelligence in the projects"
             ]
         },
         {

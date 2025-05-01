@@ -20,20 +20,127 @@
             <a href="{{ url_for('resume') }}" class="btn btn-primary mb-3 fw-bold">Download CV
                 <i class="fas fa-download"></i>
             </a>
-            <p class="fw-light text-wrap">...or if you prefer to get in touch</p>
-            <a href="{{ url_for('contact') }}" class="btn btn-primary fw-bold">Contact Me</a>
+            <p class="fw-light text-wrap">...or if you prefer a bot</p>
+            <button class="btn btn-primary fw-bold" data-bs-toggle="modal" data-bs-target="#chatInitModal">
+                Chat
+            </button>
         </div>
+    </div>
+</div>
+<!-- Chat Init Modal -->
+<div class="modal fade" id="chatInitModal" tabindex="-1" aria-labelledby="chatInitModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="chatInitForm" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Start Chat</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control mb-2" placeholder="Your Name" name="name" required>
+          <input type="email" class="form-control" placeholder="Your Email" name="email" required>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Start Chat</button>
+        </div>
+      </form>
+    </div>
+</div>
+<!-- Chat Modal -->
+<div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content bg-black text-white border-secondary">
+        <div class="modal-header bg-dark text-white border-secondary">
+          <h5 class="modal-title" id="chatModalLabel">Chat with Me</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="chatBox" style="max-height: 400px; overflow-y: auto;">
+        </div>
+        <div class="modal-footer p-2 bg-dark border-secondary">
+          <form id="chatForm" class="d-flex w-100">
+            <input type="text" id="userInput" class="form-control me-2 bg-dark text-white border-secondary" placeholder="Type a message..." required>
+            <button class="btn btn-light" type="submit">➤</button>
+          </form>
+        </div>
+      </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-      var typed = new Typed(".auto", {
-        strings: {{ roles|tojson|safe }},
-        typeSpeed: 60,
-        backSpeed: 30,
-        loop: true,
-      });
-    </script>
+<script>
+    var typed = new Typed(".auto", {
+    strings: {{ roles|tojson|safe }},
+    typeSpeed: 60,
+    backSpeed: 30,
+    loop: true,
+    });
+
+    document.getElementById("chatInitForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const dataToSend = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+        };
+
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        fetch("/start_chat", {
+            method: "POST",
+            body: JSON.stringify(dataToSend),
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": csrfToken
+            }
+        }).then(res => {
+            if (res.ok) {
+                var modal = bootstrap.Modal.getInstance(document.getElementById('chatInitModal'));
+                modal.hide();
+                const chatModal = new bootstrap.Modal(document.getElementById('chatModal'));
+                chatModal.show();
+            } else {
+                console.error("Failed to start chat:", res.status);
+            }
+        }).catch(err => console.error("Error:", err));
+    });
+
+    document.getElementById("chatForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const input = document.getElementById("userInput");
+        const msg = input.value.trim();
+        if (!msg) return;
+
+        input.value = "";
+
+        const box = document.getElementById("chatBox");
+        box.innerHTML += `<div class="text-end my-2"><span class="badge bg-primary">${msg}</span></div>`;
+
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        fetch("/chat", {
+            method: "POST",
+            body: JSON.stringify({ message: msg }),
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": csrfToken
+            }
+        })
+        .then(res => {
+            if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+            return res.json();
+        })
+        .then(data => {
+            box.innerHTML += `<div class="text-start my-2"><span class="badge bg-secondary">${data.response}</span></div>`;
+
+            box.scrollTop = box.scrollHeight;
+        })
+        .catch(err => {
+            console.error("Chat error:", err);
+            box.innerHTML += `<div class="text-start my-2"><strong>Bot:</strong> Failed to respond. Please try again.</div>`;
+        });
+    });
+
+</script>
 
 {% endblock content %}
