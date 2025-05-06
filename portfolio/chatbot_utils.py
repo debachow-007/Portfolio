@@ -43,7 +43,7 @@ def render_markdown(text):
 
 def ask_gemini(user_input, history, context):
     prompt = f"""
-You are a helpful chatbot for a developer portfolio website. Use the context to answer accurately.
+You are a helpful chatbot for a developer portfolio website. Use the context to answer accurately. In case of ambiguity, ask clarifying questions. If the user asks about a specific project, provide details about that project. If the user asks about a technology, provide a brief overview of that technology. If the user asks about a specific topic, provide relevant information from the context. If the user asks about a specific person, provide relevant information from the context. If the user asks about a specific date, provide relevant information from the context. If the user asks about a specific location, provide relevant information from the context. If the user asks about a specific technology stack, provide relevant information from the context. If you can't answer, ask user to contact the developer directly.
 
 Context:
 {context}

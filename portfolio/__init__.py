@@ -13,7 +13,7 @@ csrf = CSRFProtect(app)
 
 with open('portfolio/data.json') as f:
     data = json.load(f)
-    
+
 mail = Mail(app)
 
 from portfolio import routes

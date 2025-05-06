@@ -48,22 +48,32 @@
 <!-- Chat Modal -->
 <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
-      <div class="modal-content bg-black text-white border-secondary">
-        <div class="modal-header bg-dark text-white border-secondary">
+      <div class="modal-content bg-black text-white border border-secondary rounded-4 shadow-lg">
+        <div class="modal-header bg-dark text-white border-bottom border-secondary rounded-top-4 px-4 py-3">
           <h5 class="modal-title" id="chatModalLabel">Chat with Me</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" id="chatBox" style="max-height: 400px; overflow-y: auto;">
+
+        <div class="modal-body px-4 py-3" id="chatBox" style="max-height: 400px; overflow-y: auto;">
+          <!-- Messages -->
         </div>
-        <div class="modal-footer p-2 bg-dark border-secondary">
-          <form id="chatForm" class="d-flex w-100">
-            <input type="text" id="userInput" class="form-control me-2 bg-dark text-white border-secondary" placeholder="Type a message..." required>
-            <button class="btn btn-light" type="submit">➤</button>
+
+        <div class="modal-footer bg-dark border-top border-secondary rounded-bottom-4 px-4 py-3">
+          <form id="chatForm" class="d-flex w-100 gap-2">
+            <input
+              type="text"
+              id="userInput"
+              class="form-control bg-secondary text-white border-0 rounded-pill px-4" 
+              placeholder="Type a message..."
+              required
+            >
+            <button class="btn btn-light rounded-pill px-4 fw-bold" type="submit">Send</button>
           </form>
         </div>
       </div>
     </div>
-</div>
+  </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>

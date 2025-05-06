@@ -8,6 +8,7 @@ import os
 @app.route('/')
 @app.route('/home')
 def home():
+    print("Home Route")
     home_text = data['home_text']
     roles = data['home_roles']
     return render_template('home.html', roles=roles, home_text=home_text)
